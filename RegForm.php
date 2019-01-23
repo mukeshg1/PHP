@@ -22,7 +22,6 @@
 			<div class="form-group col-md-4">
 				<label for="inputName">First Name<sup>*</sup></label>
 				<input type="text" class="form-control" name="firstname" autocomplete="off" placeholder="First Name">
-			
 			</div>
 			<div class="form-group col-md-4">
 				<label for="inputName">Middle Name</label>
@@ -74,14 +73,13 @@
 		</div>
 		<div class="form-group col-md-13">
 			<label for="inputAbout">About Yourself<sup>*</sup></label>
-			<textarea id="about_user" name="about" class="form-control" rows="5" cols="20" autocomplete="off" placeholder="Write about yourself here..."></textarea>
+			<textarea name="about" class="form-control" rows="5" cols="20" autocomplete="off" placeholder="Write about yourself here..."></textarea>
 		</div>
 		<p>
   			Already a member? <a href="login.php">click here to sign in</a>
   		</p>
         <div class="form-group col-md-13">          
-            <input button="submit" name="submit_btn" id="submit_btn" value="Register" class="btn btn-primary btn-lg btn-block btn-huge">
-            <input type="reset" id="reset_btn" value="Reset" class="btn btn-secondary btn-lg btn-block btn-huge">
+            <button name="submit_btn" id="submit_btn" value="Register" class="btn btn-primary btn-lg btn-block btn-huge">Register</button>
         </div>  
 	</form>
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
