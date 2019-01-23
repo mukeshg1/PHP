@@ -1,4 +1,12 @@
 <?php
+/**
+* File Name    : server.php
+* File Path    : C:\xampp\htdocs\PHP
+* Description  : PHP file to insert the form data into table
+* Created date : 23/01/2019
+* @Author      : Mukesh
+* Comments     : The data entered through form is sent to MySQL database.
+*/
     //connect to the database
     $db = mysqli_connect('127.0.0.1', 'root', '', 'registration');
 

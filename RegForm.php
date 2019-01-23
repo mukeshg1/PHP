@@ -1,4 +1,13 @@
-<?php ?>
+
+<?php 
+/*
+ File Name    : RegForm.php
+ File Path    : C:\xampp\htdocs\PHP
+ Description  : Registration Form to take input from users 
+ Created date : 23/01/2019
+ @Author      : Mukesh
+ Comments     : Validation is also done here using jQuery validation plugin tool
+*/?>
 
 <!DOCTYPE html>
 <html lang="en">

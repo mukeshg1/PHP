@@ -1,3 +1,13 @@
+/**
+* File Name    : validation.js
+* File Path    : C:\xampp\htdocs\PHP
+* Description  : Validation file to validate form data 
+* Created date : 23/01/2019
+* @Author      : Mukesh
+* Comments     : Real time validation of data entered through form
+*
+*/
+
 $(function() {
     var form = $( "#register_form" );
     $.validator.setDefaults({
@@ -74,7 +84,7 @@ $(function() {
             }
         }        
     });
-    $('#birthdate').datepicker({ dateFormat: 'yyyy/mm/dd' });
+    $('#birthdate').datepicker({ dateFormat: 'dd/mm/yy' });
 
 
 });
