@@ -37,7 +37,7 @@ $(function() {
                 required: true,
                 digits: true
             },
-            address: {
+            addr: {
                 required: true
             },
             about: {
@@ -66,7 +66,7 @@ $(function() {
             phone: {
                 required: 'please enter phone number. ',
             },
-            address: {
+            addr: {
                 required: 'please enter your address.'
             },
             about:{
@@ -74,7 +74,7 @@ $(function() {
             }
         }        
     });
-    $('#birth_date').datepicker({ dateFormat: 'dd/mm/yy' });
+    $('#birthdate').datepicker({ dateFormat: 'yyyy/mm/dd' });
 
 
 });

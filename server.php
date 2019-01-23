@@ -1,19 +1,27 @@
 <?php
     //connect to the database
-    $db = mysqli_connect('localhost', 'root', '', 'registration');
+    $db = mysqli_connect('127.0.0.1', 'root', '', 'registration');
 
-    if (isset($_POST['submit_btn'])) {
+
         // receive all input values from the form
-        $firstname = mysqli_real_escape_string($db, $_POST['firstname']);
-        $middlename = mysqli_real_escape_string($db, $_POST['middlename']);
-        $lastame = mysqli_real_escape_string($db, $_POST['lastname']);
-        $gender = mysqli_real_escape_string($db, $_POST['gender']);
-        $birthdate = mysqli_real_escape_string($db, $_POST['birthdate']);
-        $phone = mysqli_real_escape_string($db, $_POST['phone']);
-        $email = mysqli_real_escape_string($db, $_POST['email']);
-        $address = mysqli_real_escape_string($db, $_POST['address']);
-        $password = mysqli_real_escape_string($db, $_POST['password']);
-        $password2 = mysqli_real_escape_string($db, $_POST['password2']);
-        $about = mysqli_real_escape_string($db, $_POST['about']);
-    }   
+        $firstname = $_POST['firstname'];
+        $middlename = $_POST['middlename'];
+        $lastame = $_POST['lastname'];
+        $gender = $_POST['gender'];
+        $birthdate = $_POST['birthdate'];
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        $addr = $_POST['addr'];
+        $password1 = $_POST['password1'];
+        $password2 = $_POST['password2'];
+        $about = $_POST['about'];
+
+        $sql = "INSERT INTO user (firstname, middlename, lastname, gender, birthdate, phone, email, addr, password1, password2, about) VALUES ('$firstname',
+                '$middlename', '$lastame', '$gender', '$birthdate', '$phone', '$email', '$addr', '$password1', '$password2', '$about')";
+        if ($db->query($sql) === TRUE){
+            echo "New Record added.";
+        } else {
+            echo "error!! data not added";
+        }
+  
 ?>  

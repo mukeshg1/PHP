@@ -1,4 +1,4 @@
-<?php include('server.php')?>
+<?php ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@
   </head>
   <body>
     <h1><center>Register Yourself!</center></h1>
-    <form id="register_form" method="post" action="RegForm.php" style="background-color:rgba(245, 227, 225, 0.534);margin:10px;padding: 10px">
+    <form id="register_form" method="post" action="server.php" style="background-color:rgba(245, 227, 225, 0.534);margin:10px;padding: 10px">
         <label><i>Fill out the form to register</i></label>
         <div class="form-row">
 			<div class="form-group col-md-4">
@@ -58,13 +58,13 @@
 			</div>
 			<div class="form-group col-md-6">
 				<label for="inputAddress">Address<sup>*</sup></label>
-				<input type="text" class="form-control" name="address" autocomplete="off" placeholder="Address">
+				<input type="text" class="form-control" name="addr" autocomplete="off" placeholder="Address">
 			</div>
 		</div>
 		<div class="form-row">
 			<div class="form-group col-md-6">
 				<label for="inputPassword">Password<sup>*</sup></label>
-				<input type="password" class="form-control" name="password" autocomplete="off" placeholder="Password">
+				<input type="password" class="form-control" name="password1" autocomplete="off" placeholder="Password">
 			</div>
 			<div class="form-group col-md-6">
 			<label for="inputRepassword">Repeat Password<sup>*</sup></label>
@@ -79,7 +79,8 @@
   			Already a member? <a href="login.php">click here to sign in</a>
   		</p>
         <div class="form-group col-md-13">          
-            <button name="submit_btn" id="submit_btn" value="Register" class="btn btn-primary btn-lg btn-block btn-huge">Register</button>
+            <button type="submit" name="submit_btn" id="submit_btn" class="btn btn-primary btn-lg btn-block btn-huge">Register</button>
+            <button type="reset" id="reset_btn" class="btn btn-secondary btn-lg btn-block btn-huge">Reset</button>
         </div>  
 	</form>
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
