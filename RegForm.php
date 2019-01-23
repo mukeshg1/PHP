@@ -1,4 +1,4 @@
-<?php?>
+<?php include('server.php')?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@
   </head>
   <body>
     <h1><center>Register Yourself!</center></h1>
-    <form id="register_form" style="background-color: #fffdfd;margin:10px;padding: 10px">
+    <form id="register_form" method="post" action="RegForm.php" style="background-color:rgba(245, 227, 225, 0.534);margin:10px;padding: 10px">
         <label><i>Fill out the form to register</i></label>
         <div class="form-row">
 			<div class="form-group col-md-4">
@@ -45,7 +45,7 @@
 			</div>
 			<div class="form-group col-md-4">
 				<label for="inputdob">Birth Date<sup>*</sup></label>
-				<input type="text" maxlength="10" class="form-control" placeholder="dd/mm/yyyy" name="birthdate" autocomplete="off">
+				<input type="text" maxlength="10" class="form-control" placeholder="dd/mm/yyyy" id="birthdate" name="birthdate" autocomplete="off">
 			</div>
 			<div class="form-group col-md-4">
 				<label for="inputPhone">Phone Number<sup>*</sup></label>
@@ -75,12 +75,19 @@
 		<div class="form-group col-md-13">
 			<label for="inputAbout">About Yourself<sup>*</sup></label>
 			<textarea id="about_user" name="about" class="form-control" rows="5" cols="20" autocomplete="off" placeholder="Write about yourself here..."></textarea>
-        </div>
+		</div>
+		<p>
+  			Already a member? <a href="login.php">click here to sign in</a>
+  		</p>
         <div class="form-group col-md-13">          
-            <input button="submit" id="submit_btn" value="Register" class="btn btn-primary btn-lg btn-block btn-huge">
+            <input button="submit" name="submit_btn" id="submit_btn" value="Register" class="btn btn-primary btn-lg btn-block btn-huge">
             <input type="reset" id="reset_btn" value="Reset" class="btn btn-secondary btn-lg btn-block btn-huge">
         </div>  
-    </form>
-    
+	</form>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script language="javascript" type="text/javascript" src="validation.js"></script>    
 </body>
 </html>
