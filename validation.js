@@ -11,16 +11,15 @@
 $(function() {
     var form = $( "#register_form" );
     $.validator.setDefaults({
-        errorClass: 'help-block',
         highlight: function(element) {
           $(element)
             .closest('.form-group')
-            .addClass('has-error');
+            .addClass('has-err');
         },
         unhighlight: function(element) {
           $(element)
             .closest('.form-group')
-            .removeClass('has-error');
+            .removeClass('has-err');
         },
         success: "valid"
     });
