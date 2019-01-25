@@ -25,18 +25,20 @@
   </head>
 <body>
     <center>
-        <form>
+        <form method="post" action="loginvalidate.php">
             <h2>Login</h2>
+            <b><?php //include('loginvalidate.php')
+            ?></b>
             <div class="col-md-4 login-form-page">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                    <input type="text" name="loginemail" class="form-control" placeholder="Your Email *"/>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                    <input type="password" name="loginpassword" class="form-control" placeholder="Your Password *"/>
                 </div>
                 <div class="form-group">
                     <p>Not a member? <a href="RegForm.php">Register here</a>Forget Password? <a href="#"">Reset here</a>
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Login" />
+                    <input type="submit" name="login_btn" class="btn btn-primary btn-lg btn-block" value="Login" />
                 </div>
                     
             </div>

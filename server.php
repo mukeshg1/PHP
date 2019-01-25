@@ -10,11 +10,12 @@
     //connect to the database
     $db = mysqli_connect('127.0.0.1', 'root', '', 'registration');
     $email    = "";
-    $errors = 0; 
+     
 
 
     if (isset($_POST['submit_btn']))
     {
+        $errors = 0;
         // receive all input values from the form
         $firstname = $_POST['firstname'];
         $middlename = $_POST['middlename'];
@@ -78,6 +79,9 @@
             if ($db->query($sql) === TRUE){
                 echo "Registration successfull.";
             }
+        }
+        else {
+            echo "Unauthorised entry not allowed.";
         }
     }
 
