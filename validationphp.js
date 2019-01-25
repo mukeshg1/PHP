@@ -39,6 +39,13 @@ $(function() {
                 required: true,
                 email: true
             },
+            password1: {
+                required: true
+            },
+            password2: {
+                required: true,
+                equalTo: "#password1"
+            },
             birthdate: {
                 required: true
             },
@@ -67,19 +74,26 @@ $(function() {
             },
             email: {
                 required: 'please enter an email address.',
-                email: 'please enter a valid email address!'
+                email: 'Please enter a valid email address!'
+            },
+            password1:{
+                required: 'Please enter a password.'
+            },
+            password2: {
+                required: 'Please re-enter password.',
+                equalTo: 'Password doesnot match, please enter same password.'
             },
             birthdate: {
-                required: 'please enter your date of birth. ',
+                required: 'Please enter your date of birth. '
             },
             phone: {
-                required: 'please enter phone number. ',
+                required: 'Please enter phone number. '
             },
             addr: {
-                required: 'please enter your address.'
+                required: 'Please enter your address.'
             },
             about:{
-                required: 'please write something about yourself.'
+                required: 'Please write something about yourself.'
             }
         }        
     });

@@ -9,8 +9,13 @@
 */
     //connect to the database
     $db = mysqli_connect('127.0.0.1', 'root', '', 'registration');
+    $email    = "";
+    $errors = array(); 
 
 
+    if (isset($_POST['submit_btn']))
+    {
+        echo "Submit button pressed";
         // receive all input values from the form
         $firstname = $_POST['firstname'];
         $middlename = $_POST['middlename'];
@@ -31,5 +36,16 @@
         } else {
             echo "error!! data not added";
         }
+    }
+
+        /*if (empty($firstname)) { array_push($errors, "Username is required"); }
+        if (empty($email)) { array_push($errors, "Email is required"); }
+        if (empty($password_1)) { array_push($errors, "Password is required"); }
+        if ($password_1 != $password_2) {
+            array_push($errors, "The two passwords do not match");
+        }*/
+
+
+        
   
 ?>  

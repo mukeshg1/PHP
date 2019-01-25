@@ -1,5 +1,5 @@
 
-<?php 
+<?php include('server.php')
 /*
  File Name    : RegForm.php
  File Path    : C:\xampp\htdocs\PHP
@@ -73,7 +73,7 @@
 		<div class="form-row">
 			<div class="form-group col-md-6">
 				<label for="inputPassword">Password<sup>*</sup></label>
-				<input type="password" class="form-control" name="password1" autocomplete="off" placeholder="Password">
+				<input type="password" class="form-control" id="password1" name="password1" autocomplete="off" placeholder="Password">
 			</div>
 			<div class="form-group col-md-6">
 			<label for="inputRepassword">Repeat Password<sup>*</sup></label>
@@ -88,7 +88,7 @@
   			Already a member? <a href="login.php">click here to sign in</a>
   		</p>
         <div class="form-group col-md-13">          
-            <button type="submit" name="submit_btn" id="submit_btn" class="btn btn-primary btn-lg btn-block btn-huge">Register</button>
+            <button name="submit_btn" id="submit_btn" class="btn btn-primary btn-lg btn-block btn-huge">Register</button>
             <button type="reset" id="reset_btn" class="btn btn-secondary btn-lg btn-block btn-huge">Reset</button>
         </div>  
 	</form>

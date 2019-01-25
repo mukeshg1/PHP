@@ -35,11 +35,10 @@
                     <input type="password" class="form-control" placeholder="Your Password *" value="" />
                 </div>
                 <div class="form-group">
+                    <p>Not a member? <a href="RegForm.php">Register here</a>Forget Password? <a href="#"">Reset here</a>
                     <input type="submit" class="btn btn-primary btn-lg btn-block" value="Login" />
                 </div>
-                <div class="form-group">
-                    <a href="#" class="btnForgetPwd" value="Login">Forget Password?</a>
-                </div>
+                    
             </div>
         </form>
     </center>
