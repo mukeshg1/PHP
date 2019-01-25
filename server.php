@@ -10,12 +10,11 @@
     //connect to the database
     $db = mysqli_connect('127.0.0.1', 'root', '', 'registration');
     $email    = "";
-    $errors = array(); 
+    $errors = 0; 
 
 
     if (isset($_POST['submit_btn']))
     {
-        echo "Submit button pressed";
         // receive all input values from the form
         $firstname = $_POST['firstname'];
         $middlename = $_POST['middlename'];
@@ -29,12 +28,56 @@
         $password2 = $_POST['password2'];
         $about = $_POST['about'];
 
-        $sql = "INSERT INTO user (firstname, middlename, lastname, gender, birthdate, phone, email, addr, password1, password2, about) VALUES ('$firstname',
-                '$middlename', '$lastame', '$gender', '$birthdate', '$phone', '$email', '$addr', '$password1', '$password2', '$about')";
-        if ($db->query($sql) === TRUE){
-            echo "New Record added.";
-        } else {
-            echo "error!! data not added";
+
+        if(empty($_POST["firstname"]))  
+        {  
+           $errors =1;  
+        }
+        if(empty($_POST["lastname"]))  
+        {  
+           $errors =1;  
+        }
+        if(empty($_POST["gender"]))  
+        {  
+           $errors =1;  
+        }
+        if(empty($_POST["birthdate"]))  
+        {  
+           $errors =1;  
+        }
+        if(empty($_POST["phone"]))  
+        {  
+           $errors =1;  
+        }
+        if(empty($_POST["email"]))  
+        {  
+           $errors =1;  
+        }
+        if(empty($_POST["addr"]))  
+        {  
+           $errors =1;  
+        }
+        if(empty($_POST["password1"]))  
+        {  
+           $errors =1;  
+        }
+        if(empty($_POST["password2"]))  
+        {  
+           $errors =1;  
+        }
+        if(empty($_POST["about"]))  
+        {  
+           $errors =1;  
+        } 
+
+
+        if ($errors === 0)
+        {
+            $sql = "INSERT INTO user (firstname, middlename, lastname, gender, birthdate, phone, email, addr, password1, password2, about) VALUES ('$firstname',
+                    '$middlename', '$lastame', '$gender', '$birthdate', '$phone', '$email', '$addr', '$password1', '$password2', '$about')";
+            if ($db->query($sql) === TRUE){
+                echo "Registration successfull.";
+            }
         }
     }
 

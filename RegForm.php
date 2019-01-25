@@ -1,5 +1,5 @@
 
-<?php include('server.php')
+<?php
 /*
  File Name    : RegForm.php
  File Path    : C:\xampp\htdocs\PHP
@@ -25,7 +25,8 @@
   </head>
   <body>
     <h1><center>Register Yourself!</center></h1>
-    <form id="register_form" method="post" action="server.php" style="background-color:rgba(245, 227, 225, 0.534);margin:10px;padding: 10px">
+	<b><?php include('server.php')?></b>
+    <form id="register_form" method="post" action="RegForm.php" style="background-color:rgba(245, 227, 225, 0.534);margin:10px;padding: 10px">
         <label><i>Fill out the form to register</i></label>
         <div class="form-row">
 			<div class="form-group col-md-4">
