@@ -16,7 +16,8 @@ if (isset($_POST['login_btn']))
     $rows = mysqli_fetch_array($result);
     if($rows)
     {
-        if ($rows["password1"] === $loginpassword)
+        $pass = $rows['password1'];
+        if (password_verify($loginpassword, $pass ))
         {
             echo "login successfull..<br>";
             echo "Welcome, " . $rows["email"]. "<br>Name: " . $rows["firstname"]. " " . $rows["lastname"]. "<br>";
@@ -24,7 +25,7 @@ if (isset($_POST['login_btn']))
         }
         else
         {
-            echo "email or password is invalid.";
+            echo "email address or password is invalid.";
         }
     }
     else

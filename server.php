@@ -74,6 +74,8 @@
 
         if ($errors === 0)
         {
+            $password1 = password_hash($password1, PASSWORD_BCRYPT);
+            $password2 = password_hash($password2, PASSWORD_BCRYPT);
             $sql = "INSERT INTO user (firstname, middlename, lastname, gender, birthdate, phone, email, addr, password1, password2, about) VALUES ('$firstname',
                     '$middlename', '$lastame', '$gender', '$birthdate', '$phone', '$email', '$addr', '$password1', '$password2', '$about')";
             if ($db->query($sql) === TRUE){
