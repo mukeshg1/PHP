@@ -14,12 +14,12 @@ $(function() {
         highlight: function(element) {
           $(element)
             .closest('.form-group')
-            .addClass('has-err');
+            .addClass('err');
         },
         unhighlight: function(element) {
           $(element)
             .closest('.form-group')
-            .removeClass('has-err');
+            .removeClass('err');
         },
         success: "valid"
     });
