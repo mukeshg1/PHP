@@ -126,7 +126,10 @@ var validation = (function() {
                 },
                 error: function(error) {
                     $("#message").html(error);
-                }
+                },
+                complete:function(){
+                    $('body, html').animate({scrollTop:$('form').offset().top}, 'slow');
+                 }
             });
             $(form)[0].reset();
             

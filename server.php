@@ -10,22 +10,23 @@
     //connect to the database
     
 
-   include("constants.php");
-   $db = mysqli_connect(SERVER, USER, PASSWORD, DB);
+      include("constants.php");
+      $db = mysqli_connect(SERVER, USER, PASSWORD, DB);
 
-    $errors = 0;
-    // receive all input values from the form
-    $firstname = $_REQUEST['firstname'];
-    $middlename = $_REQUEST['middlename'];
-    $lastame = $_REQUEST['lastname'];
-    $gender = $_REQUEST['gender'];
-    $birthdate = $_REQUEST['birthdate'];
-    $phone = $_REQUEST['phone'];
-    $email = $_REQUEST['email'];
-    $addr = $_REQUEST['addr'];
-    $password1 = $_REQUEST['password1'];
-    $password2 = $_REQUEST['password2'];
-    $about = $_REQUEST['about'];
+      session_start();
+      $errors = 0;
+      // receive all input values from the form
+      $firstname = mysqli_real_escape_string($db, $_REQUEST['firstname']);
+      $middlename = mysqli_real_escape_string($db, $_REQUEST['middlename']);
+      $lastame = mysqli_real_escape_string($db, $_REQUEST['lastname']);
+      $gender = mysqli_real_escape_string($db, $_REQUEST['gender']);
+      $birthdate = mysqli_real_escape_string($db, $_REQUEST['birthdate']);
+      $phone = mysqli_real_escape_string($db, $_REQUEST['phone']);
+      $email = mysqli_real_escape_string($db, $_REQUEST['email']);
+      $addr = mysqli_real_escape_string($db, $_REQUEST['addr']);
+      $password1 = mysqli_real_escape_string($db, $_REQUEST['password1']);
+      $password2 = mysqli_real_escape_string($db, $_REQUEST['password2']);
+      $about = mysqli_real_escape_string($db, $_REQUEST['about']);
 
 
       $password1 = password_hash($password1, PASSWORD_BCRYPT);
