@@ -5,7 +5,12 @@
 p{
     text-align: left;
 }
-#message{
-    color:red;
-    font-style: italic;
+.registerform{
+    float:right; 
+    width:40%; 
+    border-radius: 10px;
+    background-color:rgba(39, 13, 63, 0.931);
+    margin:10px;
+    padding: 10px;
+    color: white;  
 }
