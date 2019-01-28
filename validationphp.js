@@ -8,7 +8,7 @@
 *
 */
 
-$(function() {
+var validation = (function() {
     var form = $( "#register_form" );
     $.validator.setDefaults({
         highlight: function(element) {
@@ -100,4 +100,36 @@ $(function() {
     $('#birthdate').datepicker({ dateFormat: 'dd/mm/yy' });
 
 
-});
+    $("#submit_btn").click(function() {
+        $.ajax({
+			type: "POST",
+			url: "server.php",
+			data: {
+				firstname   : $("#firstname").val(),  
+				middlename  : $("#middlename").val(),
+				lastname    : $("#lastname").val(),   
+				gender      : $("#gender").val(),
+				birthdate   : $("#birthdate").val(), 
+				phone       : $("#phone").val(), 
+				email       : $("#email").val(),  
+				addr        : $("#addr").val(),
+				password1   : $("#password1").val(),
+				password2   : $("#password2").val(),
+				about       : $("#about").val()
+			},
+			success: function (msg){
+				$("#message").html(msg);
+			},
+			error: function(req, status, error) {
+				$("#message").html(msg);
+			}
+		});
+		return false;
+    });	
+    
+    return
+    {
+        
+    }
+
+})();

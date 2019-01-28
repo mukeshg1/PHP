@@ -25,27 +25,27 @@
   </head>
   <body>
     <h1><center>Register Yourself!</center></h1>
-	<b><?php include('server.php')?></b>
-    <form id="register_form" method="post" action="RegForm.php" style="background-color:rgba(245, 227, 225, 0.534);margin:10px;padding: 10px">
+    <form id="register_form" method="post" style="background-color:rgba(245, 227, 225, 0.534);margin:10px;padding: 10px">
         <label><i>Fill out the form to register</i></label>
+		<div id="message"></div>
         <div class="form-row">
 			<div class="form-group col-md-4">
 				<label for="inputName">First Name<sup>*</sup></label>
-				<input type="text" class="form-control" name="firstname" autocomplete="off" placeholder="First Name">
+				<input type="text" class="form-control" name="firstname" id="firstname" autocomplete="off" placeholder="First Name">
 			</div>
 			<div class="form-group col-md-4">
 				<label for="inputName">Middle Name</label>
-				<input type="text" class="form-control" name="middlename" autocomplete="off" placeholder="Middle Name">
+				<input type="text" class="form-control" name="middlename" id="middlename" autocomplete="off" placeholder="Middle Name">
 			</div>
 			<div class="form-group col-md-4">
 				<label for="inputName">Last Name<sup>*</sup></label>
-				<input type="text" class="form-control" name="lastname" autocomplete="off" placeholder="Last Name">
+				<input type="text" class="form-control" name="lastname" id="lastname" autocomplete="off" placeholder="Last Name">
 			</div>
 		</div>
 		<div class="form-row">
 			<div class='form-group col-md-4'>
 				<label for="inputGender">Gender</label>
-				<select class="form-control" autocomplete="off" name="gender">
+				<select class="form-control" autocomplete="off" name="gender" id="gender">
 					<option selected disabled>Select Gender</option>
 					<option value="Male">Male</option>
 					<option value="Female">Female</option>
@@ -58,17 +58,17 @@
 			</div>
 			<div class="form-group col-md-4">
 				<label for="inputPhone">Phone Number<sup>*</sup></label>
-				<input type="text" maxlength="10" autocomplete="off" class="form-control" name="phone" placeholder="Mobile Number">   
+				<input type="text" maxlength="10" autocomplete="off" class="form-control" name="phone" id="phone" placeholder="Mobile Number">   
 			</div>       
 		</div>
 		<div class="form-row">
 			<div class="form-group col-md-6">
 				<label for="inputEmail4">Email<sup>*</sup></label>
-				<input type="email" name="email" class="form-control" autocomplete="off" placeholder="Email">
+				<input type="email" name="email" id="email" class="form-control" autocomplete="off" placeholder="Email">
 			</div>
 			<div class="form-group col-md-6">
 				<label for="inputAddress">Address<sup>*</sup></label>
-				<input type="text" class="form-control" name="addr" autocomplete="off" placeholder="Address">
+				<input type="text" class="form-control" name="addr" id="addr" autocomplete="off" placeholder="Address">
 			</div>
 		</div>
 		<div class="form-row">
@@ -78,12 +78,12 @@
 			</div>
 			<div class="form-group col-md-6">
 			<label for="inputRepassword">Repeat Password<sup>*</sup></label>
-			<input type="password" class="form-control" name="password2" autocomplete="off" placeholder="Repeat Password">
+			<input type="password" class="form-control" name="password2" id="password2" autocomplete="off" placeholder="Repeat Password">
 			</div>
 		</div>
 		<div class="form-group col-md-13">
 			<label for="inputAbout">About Yourself<sup>*</sup></label>
-			<textarea name="about" class="form-control" rows="5" cols="20" autocomplete="off" placeholder="Write about yourself here..."></textarea>
+			<textarea name="about" id="about" class="form-control" rows="5" cols="20" autocomplete="off" placeholder="Write about yourself here..."></textarea>
 		</div>
 		<p>
   			Already a member? <a href="login.php">click here to sign in</a>
@@ -93,6 +93,7 @@
             <button type="reset" id="reset_btn" class="btn btn-secondary btn-lg btn-block btn-huge">Reset</button>
         </div>  
 	</form>
+	
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
