@@ -28,59 +28,17 @@
     $about = $_REQUEST['about'];
 
 
-    if(empty($_REQUEST["firstname"]))  
-    {  
-       $errors =1;  
-    }
-    if(empty($_REQUEST["lastname"]))  
-    {  
-       $errors =1;  
-    }
-    if(empty($_REQUEST["gender"]))  
-    {  
-       $errors =1;  
-    }
-    if(empty($_REQUEST["birthdate"]))  
-    {  
-       $errors =1;  
-    }
-    if(empty($_REQUEST["phone"]))  
-    {  
-       $errors =1;  
-    }
-    if(empty($_REQUEST["email"]))  
-    {  
-       $errors =1;  
-    }
-    if(empty($_REQUEST["addr"]))  
-    {  
-       $errors =1;  
-    }
-    if(empty($_REQUEST["password1"]))  
-    {  
-       $errors =1;  
-    }
-    if(empty($_REQUEST["password2"]))  
-    {  
-       $errors =1;  
-    }
-    if(empty($_REQUEST["about"]))  
-    {  
-       $errors =1;  
-    } 
-
-
-    if ($errors === 0)
-    {
-        $sql = "INSERT INTO user (firstname, middlename, lastname, gender, birthdate, phone, email, addr, password1, password2, about) VALUES ('$firstname',
-                '$middlename', '$lastame', '$gender', '$birthdate', '$phone', '$email', '$addr', '$password1', '$password2', '$about')";
-        if ($db->query($sql) === TRUE){
-            echo "Registration successfull.";
-        }
-    }
-    else {
-        echo "Unauthorised entry not allowed.";
-    }
-
+      $password1 = password_hash($password1, PASSWORD_BCRYPT);
+      $password2 = password_hash($password2, PASSWORD_BCRYPT);
+      $sql = "INSERT INTO user (firstname, middlename, lastname, gender, birthdate, phone, email, addr, password1, password2, about) VALUES ('$firstname',
+            '$middlename', '$lastame', '$gender', '$birthdate', '$phone', '$email', '$addr', '$password1', '$password2', '$about')";
+      if ($db->query($sql) === TRUE){
+         echo "<p style='color:green;'> Registration successfull</p>";
+      }
+      else 
+      {
+         echo "<p style='color:red;'>Error:".mysqli_error($db)."</p>";
+      }
+    
   
 ?>  
