@@ -1,10 +1,20 @@
 <?php
+    session_start();
+    $loginemail = false;
+    $loginpassword = false;
 
     include("constants.php");
     $dbconn = mysqli_connect(SERVER, USER, PASSWORD, DB);
 
-    $loginemail = mysqli_real_escape_string($dbconn, $_POST['loginemail']);
-    $loginpassword = mysqli_real_escape_string($dbconn, $_POST['loginpassword']);
+    if(isset($_POST['loginemail']))
+    {
+        $loginemail = mysqli_real_escape_string($dbconn, $_POST['loginemail']);
+    }
+    if(isset($_POST['loginpassword']))
+    {
+        $loginpassword = mysqli_real_escape_string($dbconn, $_POST['loginpassword']);
+    }
+   
 
     $sql = "select * from user where email = '$loginemail' ";
     if(!$dbconn)
@@ -18,16 +28,71 @@
         $pass = $rows['password1'];
         if (password_verify($loginpassword, $pass ))
         {
-            echo "login successfull..<br>";
-            echo "Welcome, " . $rows["email"]. "<br>Name: " . $rows["firstname"]. " " . $rows["lastname"]. "<br>";
+            $_SESSION['user'] = $loginemail;
+            /*echo "login successfull..<br>";
+            echo "Welcome, " . $rows["email"]. "<br>Name: " . $rows["firstname"]. " " . $rows["lastname"]. "<br>";*/
+
+            ?>
+            <html>
+            <head>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> 
+            </head>
+            <body>
+                <div class="card-header">
+                    Welcome, <?php echo $loginemail ?>!
+                    <a href='logout.php'>Logout</php></a>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">Name</div>
+                                <div class="col-md-6"><?php echo $rows["firstname"]. " " . $rows["lastname"]?></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">Gender</div>
+                                <div class="col-md-6"><?php echo $rows["gender"]?></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">Birth date</div>
+                                <div class="col-md-6"><?php echo $rows["birthdate"]?></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">Mobile Number</div>
+                                <div class="col-md-6"><?php echo $rows["phone"]?></div>
+                            </div>     
+                            <div class="row">
+                                <div class="col-md-6">Email</div>
+                                <div class="col-md-6"><?php echo $rows["email"]?></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">Address</div>
+                                <div class="col-md-6"><?php echo $rows["addr"]?></div>
+                            </div>  
+                            <div class="row">
+                                <div class="col-md-6">About you</div>
+                                <div class="col-md-6"><?php echo $rows["about"]?></div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>   
+            </body>
+            </html>
+
+
+
+        <?php
         }
         else
         {
+            require 'RegForm.html';
             echo "email address or password is invalid.";
         }
     }
     else
     {
+        require 'RegForm.html';
         echo "Invalid username or password";
     }
 ?>
+

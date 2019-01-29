@@ -1,17 +1,18 @@
+<?php include('loginvalidate.php')?>
 <html>
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> 
 </head>
 <body>
     <div class="card-header">
-        Welcome, <?php $loginemail ?>!
+        Welcome, <?php echo $loginemail ?>!
     </div>
     <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">Name</div>
-                    <div class="col-md-6"><?php $rows["firstname"]. " " . $rows["lastname"]?></div>
+                    <div class="col-md-6"><?php echo $rows["firstname"]. " " . $rows["lastname"]?></div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">Gender</div>

@@ -52,6 +52,9 @@ var login = (function(){
                 data:{
                     loginemail: $("#loginemail").val(),
                     loginpassword: $("#loginpassword").val()
+                },
+                success: function (msg){
+                    $("#message").html(msg);
                 }
             });
             return false;
