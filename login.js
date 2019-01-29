@@ -46,15 +46,15 @@ var login = (function(){
     /*$("#login_btn").click(function(){
         if (loginform.valid() == true)
         {
+            $(".preload").fadeOut(2000, function(){
+                $(".body").fadeIn(1000);
+            });
             $.ajax({
                 type: "POST",
                 url: "loginvalidate.php",
                 data:{
                     loginemail: $("#loginemail").val(),
                     loginpassword: $("#loginpassword").val()
-                },
-                success: function (msg){
-                    $("#message").html(msg);
                 }
             });
             return false;

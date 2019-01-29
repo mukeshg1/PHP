@@ -48,7 +48,7 @@
       $sql = "INSERT INTO user (firstname, middlename, lastname, gender, birthdate, phone, email, addr, password1, password2, about) VALUES ('$firstname',
          '$middlename', '$lastame', '$gender', '$birthdate', '$phone', '$email', '$addr', '$password1', '$password2', '$about')";
       if ($db->query($sql) === TRUE){
-         echo "<p style='color:green;'> Registration successfull</p>";
+         echo "<p style='color:white;'> Registration successfull</p>";
       }
       else 
       {

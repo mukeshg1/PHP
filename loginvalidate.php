@@ -4,7 +4,8 @@
     $loginpassword = false;
 
     include("constants.php");
-    $dbconn = mysqli_connect(SERVER, USER, PASSWORD, DB);
+    $dbconn = mysqli_connect(SERVER, USER, PASSWORD, DB) or
+    exit("Database Error! Try after sometime.");
 
     if(isset($_POST['loginemail']))
     {

@@ -9,6 +9,7 @@
 */
 
 var validation = (function() {
+    $("#loader").hide();
     
     var form = $( "#register_form" );
     $.validator.setDefaults({
@@ -105,7 +106,6 @@ var validation = (function() {
         
         if (form.valid() === true)
         {
-            $("#loading_spinner").css({"display":"block"});
             $.ajax({
                 type: "POST",
                 url: "server.php",
@@ -122,6 +122,9 @@ var validation = (function() {
                     password2   : $("#password2").val(),
                     about       : $("#about").val()
                 },
+                start: function(){
+                    $("#loader").show();
+                },
                 success: function (msg){
                     $("#message").html(msg);
                 },
@@ -130,6 +133,7 @@ var validation = (function() {
                 },
                 complete:function(){
                     $('body, html').animate({scrollTop:$('form').offset().top}, 'slow');
+                    $("#loader").hide();
                  }
             });
             $(form)[0].reset();
@@ -139,7 +143,6 @@ var validation = (function() {
         }
         else
         {
-            $("#loading_spinner").css({"display":"none"});
             $("#message").html("Enter valid details.");
         }
     });	
