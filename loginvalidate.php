@@ -1,11 +1,10 @@
 <?php
 
-$dbconn = mysqli_connect('127.0.0.1', 'root', '', 'registration');
+    include("constants.php");
+    $dbconn = mysqli_connect(SERVER, USER, PASSWORD, DB);
 
-if (isset($_POST['login_btn']))
-{
-    $loginemail = $_POST['loginemail'];
-    $loginpassword = $_POST['loginpassword'];
+    $loginemail = mysqli_real_escape_string($dbconn, $_POST['loginemail']);
+    $loginpassword = mysqli_real_escape_string($dbconn, $_POST['loginpassword']);
 
     $sql = "select * from user where email = '$loginemail' ";
     if(!$dbconn)
@@ -21,7 +20,6 @@ if (isset($_POST['login_btn']))
         {
             echo "login successfull..<br>";
             echo "Welcome, " . $rows["email"]. "<br>Name: " . $rows["firstname"]. " " . $rows["lastname"]. "<br>";
-           
         }
         else
         {
@@ -32,5 +30,4 @@ if (isset($_POST['login_btn']))
     {
         echo "Invalid username or password";
     }
-}
 ?>

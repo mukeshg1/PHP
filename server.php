@@ -33,8 +33,12 @@
 	{
 		if (empty($value))
 		{
-			$errors = 1;
-		}
+         $errors += 1;
+      }
+   }
+   if (empty($middlename))
+   {
+      $errors = 0;
    }
    
    if ($errors == 0)
@@ -50,6 +54,10 @@
       {
          echo "<p style='color:red;'>Error:".mysqli_error($db)."</p>";
       }
+   }
+   else
+   {
+      echo "Registration not allowed.";
    }
     
   

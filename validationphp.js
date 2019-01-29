@@ -105,6 +105,7 @@ var validation = (function() {
         
         if (form.valid() === true)
         {
+            $("#loading_spinner").css({"display":"block"});
             $.ajax({
                 type: "POST",
                 url: "server.php",
@@ -135,6 +136,11 @@ var validation = (function() {
             
             
             return false;
+        }
+        else
+        {
+            $("#loading_spinner").css({"display":"none"});
+            $("#message").html("Enter valid details.");
         }
     });	
     
